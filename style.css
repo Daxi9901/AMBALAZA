@@ -12,127 +12,70 @@
   --border: #444;
 }
 
-/* OSNOVNO */
 * {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  overflow-x: hidden;
+  min-height: 100%;
 }
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
 
-  margin: 0;
-  padding: 12px;
+  padding: 16px;
 
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.5;
 
-  width: 100%;
   overflow-x: hidden;
-
-  -webkit-text-size-adjust: 100%;
 }
 
 /* NASLOV */
+
 h1 {
   text-align: center;
+
   font-weight: 500;
+  font-size: 25px;
+
   color: var(--accent);
 
-  font-size: 24px;
-  margin: 8px 0 18px;
+  margin: 8px 0 20px;
 }
 
 /* KONTROLE */
+
 .controls,
 .actions {
-  margin: 12px 0;
-  text-align: center;
-}
-
-/* TABELA - omogućava skrolovanje ako je široka */
-table {
   width: 100%;
-  border-collapse: collapse;
+  margin: 15px 0;
 
-  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
 
-  font-size: 16px;
-
-  background-color: var(--bg);
-}
-
-/* ZAGLAVLJE */
-th {
-  background-color: var(--accent);
-  color: #fff;
-
-  padding: 10px 8px;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  white-space: nowrap;
-}
-
-/* ĆELIJE */
-td {
-  border: 1px solid var(--border);
-
-  padding: 10px 8px;
-
-  text-align: center;
-
-  font-size: 16px;
-
-  min-height: 45px;
-}
-
-/* DUGMAD */
-button {
-  margin: 5px;
-  padding: 12px 16px;
-
-  border: none;
-  background-color: var(--accent);
-  color: #fff;
-
-  cursor: pointer;
-
-  border-radius: 8px;
-
-  font-size: 16px;
-  font-weight: 500;
-
-  min-height: 46px;
-
-  touch-action: manipulation;
-
-  transition: opacity 0.15s ease,
-              transform 0.1s ease;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-button:active {
-  transform: scale(0.97);
+  gap: 8px;
 }
 
 /* INPUT */
+
 #ambalaza-input {
+  display: block;
+
   width: 100%;
 
-  padding: 13px 14px;
+  height: 50px;
+
+  padding: 0 15px;
 
   font-size: 17px;
 
@@ -141,19 +84,16 @@ button:active {
 
   outline: none;
 
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
 
-  transition: all 0.2s ease-in-out;
-
-  min-height: 48px;
+  margin-bottom: 16px;
 }
 
 #ambalaza-input:focus {
   border-color: #005a9e;
 
-  box-shadow:
-    0 0 6px rgba(0, 90, 158, 0.4);
+  box-shadow: 0 0 6px rgba(0, 90, 158, 0.35);
 }
 
 #ambalaza-input::placeholder {
@@ -161,89 +101,170 @@ button:active {
   font-style: italic;
 }
 
-/* =========================================
+/* TABELA */
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 8px;
+
+  font-size: 15px;
+
+  background: var(--bg);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: var(--accent);
+  color: white;
+
+  padding: 11px 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+td {
+  border: 1px solid var(--border);
+
+  padding: 11px 6px;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+/* DUGMAD */
+
+button {
+  border: none;
+
+  background: var(--accent);
+  color: white;
+
+  border-radius: 8px;
+
+  padding: 12px 15px;
+
+  min-height: 46px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:hover {
+  opacity: 0.88;
+}
+
+
+/* ========================================
    TELEFON
-   ========================================= */
+======================================== */
 
 @media (max-width: 600px) {
 
   body {
-    padding: 10px;
-    font-size: 16px;
+    padding: 14px 10px;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 24px;
+
+    margin-top: 5px;
+    margin-bottom: 18px;
+  }
+
+  #ambalaza-input {
+    height: 52px;
+
+    font-size: 17px;
+
     margin-bottom: 14px;
   }
 
-  .controls,
-  .actions {
-    margin: 10px 0;
-  }
-
-  /* INPUT */
-  #ambalaza-input {
-    font-size: 18px;
-    padding: 14px;
-
-    min-height: 50px;
-  }
-
-  /* DUGMAD */
-  button {
-    font-size: 17px;
-
-    padding: 13px 16px;
-
-    min-height: 48px;
-
-    margin: 4px;
-  }
-
   /* TABELA */
+
   table {
-    font-size: 15px;
-    margin-top: 14px;
+    margin-top: 5px;
+
+    font-size: 14px;
   }
 
   th {
-    font-size: 14px;
-    padding: 10px 7px;
+    padding: 11px 4px;
+
+    font-size: 13px;
   }
 
   td {
+    padding: 12px 4px;
+
+    font-size: 14px;
+  }
+
+  /* AKCIJE */
+
+  .controls,
+  .actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 14px;
+  }
+
+  .controls button,
+  .actions button {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin: 0;
+
     font-size: 15px;
-    padding: 10px 7px;
   }
 }
 
-/* =========================================
-   VEOMA MALI TELEFONI
-   ========================================= */
+
+/* ========================================
+   VEOMA MALI TELEFON
+======================================== */
 
 @media (max-width: 380px) {
 
   body {
-    padding: 8px;
+    padding: 12px 8px;
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 22px;
+  }
+
+  th {
+    font-size: 12px;
+    padding: 9px 3px;
+  }
+
+  td {
+    font-size: 13px;
+    padding: 10px 3px;
   }
 
   button {
-    font-size: 16px;
-    padding: 12px 14px;
-  }
-
-  #ambalaza-input {
-    font-size: 17px;
-  }
-
-  th,
-  td {
-    font-size: 14px;
-    padding: 8px 5px;
+    font-size: 14px !important;
   }
 }
