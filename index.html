@@ -2,63 +2,122 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Evidencija ambalaže</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Evidencija ambalaže</h1>
 
-  <div class="controls">
-    <input list="ambalaza-list" id="ambalaza-input" placeholder="Izaberi ili ukucaj ambalažu">
-    <datalist id="ambalaza-list">
-      <option value="Rolocompact">
-      <option value="VIP 4311">
-      <option value="VIP 4317">
-      <option value="VIP 6411">
-      <option value="VIP 6416">
-      <option value="VIP 6419">
-      <option value="VIP 6423">
-      <option value="VIP 6425">
-      <option value="VIP 6428">
-      <option value="RPC 4317">
-      <option value="RPC 6411">
-      <option value="RPC 6419">
-      <option value="RPC 6423">
-      <option value="Bito Kutija">
-      <option value="Smaart Box">
-      <option value="Cep Paleta">
-      <option value="Euro Paleta">
-      <option value="Obična Paleta">
-      <option value="Termo Rol Kontejner">
-    </datalist>
+  <div class="app">
+
+    <h1>Evidencija ambalaže</h1>
+
+    <!-- UNOS -->
+    <div class="controls">
+
+      <input
+        list="ambalaza-list"
+        id="ambalaza-input"
+        placeholder="Izaberi ili ukucaj ambalažu"
+        autocomplete="off"
+      >
+
+      <datalist id="ambalaza-list">
+        <option value="Rolocompact">
+        <option value="VIP 4311">
+        <option value="VIP 4317">
+        <option value="VIP 6411">
+        <option value="VIP 6416">
+        <option value="VIP 6419">
+        <option value="VIP 6423">
+        <option value="VIP 6425">
+        <option value="VIP 6428">
+        <option value="RPC 4317">
+        <option value="RPC 6411">
+        <option value="RPC 6419">
+        <option value="RPC 6423">
+        <option value="Bito Kutija">
+        <option value="Smaart Box">
+        <option value="Cep Paleta">
+        <option value="Euro Paleta">
+        <option value="Obična Paleta">
+        <option value="Termo Rol Kontejner">
+      </datalist>
+
+    </div>
+
+
+    <!-- TABELA -->
+    <div class="table-wrapper">
+
+      <table id="ambalaza-table">
+
+        <thead>
+          <tr>
+            <th>Šifra</th>
+            <th>Naziv</th>
+            <th>Unos</th>
+            <th>Zbir</th>
+            <th>Ukloni</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- AKCIJE -->
+    <div class="actions">
+
+      <button id="save-btn">
+        Sačuvaj u JSON
+      </button>
+
+
+      <label for="load-file" class="file-button">
+        Odaberi fajl
+      </label>
+
+      <input
+        type="file"
+        id="load-file"
+        accept=".json"
+        hidden
+      >
+
+
+      <button id="pdf-btn">
+        Export PDF
+      </button>
+
+
+      <button id="reset-btn">
+        Reset
+      </button>
+
+
+      <button id="theme-btn">
+        Promeni temu
+      </button>
+
+    </div>
+
   </div>
 
-  <table id="ambalaza-table">
-    <thead>
-      <tr>
-        <th>Šifra</th>
-        <th>Naziv</th>
-        <th>Unos</th>
-        <th>Zbir</th>
-        <th>Ukloni</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <div class="actions">
-    <button id="save-btn">Sačuvaj u JSON</button>
-    <input type="file" id="load-file" accept=".json">
-    <button id="pdf-btn">Export PDF</button>
-    <button id="reset-btn">Reset</button>
-    <button id="theme-btn">Promeni temu</button>
-  </div>
 
   <!-- jsPDF biblioteke -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
   <script src="app.js"></script>
   <script src="pdf.js"></script>
+
 </body>
 </html>
